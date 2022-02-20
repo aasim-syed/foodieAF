@@ -1,0 +1,205 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #ece9e6;
+    background: -webkit-linear-gradient(to right, #ffffff, #ece9e6);
+    background: url('https://i.pinimg.com/originals/fc/e9/7e/fce97eba95fd3de922940e31f8ab8982.gif');
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    min-height: 100vh;
+}
+
+img {
+    max-width: 100%;
+}
+
+.mobile-container {
+     /* background-color: rgb(151, 50, 50); */
+    background: url('https://cdn.dribbble.com/users/95862/screenshots/3225729/media/7d7768e788b1137483c2e683a243284f.gif');
+    align-items: center;
+    justify-content: center;
+    border-radius: 13px;
+    overflow: hidden;
+    width: 400px;
+    box-shadow: blue 0px 0px 0px 2px inset, rgb(255, 255, 255) 10px -10px 0px -3px, rgb(31, 193, 27) 10px -10px, rgb(255, 255, 255) 20px -20px 0px -3px, rgb(255, 217, 19) 20px -20px, rgb(255, 255, 255) 30px -30px 0px -3px, rgb(255, 156, 85) 30px -30px, rgb(255, 255, 255) 40px -40px 0px -3px, rgb(255, 85, 85) 40px -40px;
+}
+
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+header input {
+    background-color: rgb(24, 5, 5);
+    border: none;
+    border-radius: 3px;
+    font-family: inherit;
+    padding: 0.5rem 1rem;
+    color:#ece9e6;
+}
+
+header button {
+    background-color: transparent;
+    border: none;
+    color: rgb(138, 129, 141);
+    font-size: 1.5rem;
+    margin-left: 10px;
+}
+
+.fav-container {
+    background-color: rgb(14, 4, 59);
+    padding: 0.25rem 1rem;
+    text-align: center;
+    color: #ece9e6;
+    
+}
+
+.fav-meals {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+}
+
+.fav-meals li {
+    cursor: pointer;
+    position: relative;
+    margin: 5px;
+    width: 75px;
+}
+
+.fav-meals li .clear {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+    position: absolute;
+    top: -0.5rem;
+    right: -0.5rem;
+    font-size: 1.2rem;
+}
+
+.fav-meals li:hover .clear {
+    opacity: 1;
+}
+
+.fav-meals li img {
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 2px #3333331a;
+    object-fit: cover;
+    height: 70px;
+    width: 70px;
+}
+
+.fav-meals li span {
+    display: inline-block;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 75px;
+}
+
+.meal {
+    border-radius: 3px;
+    box-shadow: 0 0 10px 2px #3333331a;
+    cursor: pointer;
+    margin: 1.5rem;
+    overflow: hidden;
+}
+
+.meal-header {
+    position: relative;
+}
+
+.meal-header .random {
+    position: absolute;
+    top: 1rem;
+    background-color: #fff;
+    padding: 0.25rem 1rem;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.meal-header img {
+    object-fit: cover;
+    height: 250px;
+    width: 100%;
+}
+
+.meal-body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.meal-body h4 {
+    margin: 0;
+}
+
+.meal-body .fav-btn {
+    border: none;
+    background-color: transparent;
+    color: rgb(197, 188, 188);
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.meal-body .fav-btn.active {
+    color: rebeccapurple;
+}
+
+.popup-container {
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.popup-container.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.popup {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 0 2rem;
+    position: relative;
+    overflow: auto;
+    max-height: 100vh;
+    max-width: 600px;
+    width: 100%;
+}
+
+.popup .close-popup {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.meal-info h1 {
+    text-align: center;
+}
