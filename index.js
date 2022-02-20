@@ -207,26 +207,30 @@ searchBtn.addEventListener("click", async () => {
     const search = searchTerm.value;
     const meals = await getMealsBySearch(search);
 
-    if (search != meals){
-        //alert('404 NOT FOUND')
-        // const meal = document.createElement("div");
-        // meal.classList.add("meal");
+    // if (search !== meals){
+    //     //alert('404 NOT FOUND')
+    //     // const meal = document.createElement("div");
+    //     // meal.classList.add("meal");
     
-        favoriteContainer.innerHTML = `
-            
-            <h1>Hmm 🙄🤔<span style="color:red;font-weight:bold;"> ${search}</span> you ask ? NOT FOUND! </h1>
-            <img src="https://cdn.dribbble.com/users/1818132/screenshots/4264991/media/c10fe2449e4861c155585ddf525e670b.gif"/>
-            
-            `
+      
 
-    }
-    else
-    // if(meals)
-     {
+    // }
+    // else
+    if(meals)
+         {
         meals.forEach((meal) => {
             addMeal(meal);
         });
-    } 
+        favoriteContainer.innerHTML = `
+        <h1>  ${search} 😋🤤!! <br/> Here are few!  </h1>`;
+    } else {
+        favoriteContainer.innerHTML = `
+            
+        <h1>Hmm 🙄🤔<span style="color:red;font-weight:bold;"> ${search}</span> you ask ? NOT FOUND! </h1>
+        <img src="https://cdn.dribbble.com/users/1818132/screenshots/4264991/media/c10fe2449e4861c155585ddf525e670b.gif"/>
+
+        `
+    }
 });
 
 popupCloseBtn.addEventListener("click", () => {
